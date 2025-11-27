@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEW Badge Variants Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 32px;
+      background: #ffffff;
+      color: #222;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      font-size: 24px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .option {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+    .option h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .option p.desc {
+      font-size: 13px;
+      color: #555;
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .file {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    /* ───────────────────────────────
+       OPTION 1: Red box outline + red text (PULSE)
+       ─────────────────────────────── */
+    .badge-box {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #c62828;
+      border: 2px solid #c62828;
+      border-radius: 14px;
+      vertical-align: middle;
+      animation: boxPulse 2.8s ease-out infinite;
+    }
+
+    @keyframes boxPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(198,40,40,0.6); }
+      70%  { box-shadow: 0 0 0 10px rgba(198,40,40,0); }
+      100% { box-shadow: 0 0 0 0 rgba(198,40,40,0); }
+    }
+
+    /* ───────────────────────────────
+       OPTION 2: Text-only, red letters (PULSE)
+       ─────────────────────────────── */
+    .badge-text {
+      margin-left: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #c62828;
+      vertical-align: middle;
+      animation: textPulse 2.6s ease-in-out infinite;
+    }
+
+    @keyframes textPulse {
+      0%   { opacity: 1;   text-shadow: 0 0 0 rgba(198,40,40,0); }
+      50%  { opacity: 0.55; text-shadow: 0 0 8px rgba(198,40,40,0.5); }
+      100% { opacity: 1;   text-shadow: 0 0 0 rgba(198,40,40,0); }
+    }
+
+    /* ───────────────────────────────
+       OPTION 3: Red background + white text (PULSE)
+       ─────────────────────────────── */
+    .badge-fill-pulse {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      background: #c62828;
+      border-radius: 14px;
+      vertical-align: middle;
+      animation: fillPulse 2.8s ease-out infinite;
+    }
+
+    @keyframes fillPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(198,40,40,0.6); }
+      70%  { box-shadow: 0 0 0 10px rgba(198,40,40,0); }
+      100% { box-shadow: 0 0 0 0 rgba(198,40,40,0); }
+    }
+
+    /* ───────────────────────────────
+       OPTION 4: Red background + white text (NO PULSE)
+       ─────────────────────────────── */
+    .badge-fill-static {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      background: #c62828;
+      border-radius: 14px;
+      vertical-align: middle;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>“NEW!” Badge Variants – Comparison</h1>
+
+  <div class="options">
+
+    <!-- OPTION 1 -->
+    <section class="option">
+      <h2>Option 1: Red box + red text (Pulse)</h2>
+      <p class="desc">Outline box, red letters, pulsing ring.</p>
+
+      <div class="file">
+        FY2026 Financial Report
+        <span class="badge-box">NEW!</span>
+      </div>
+      <div class="file">
+        Sustainability Committee Minutes
+        <span class="badge-box">NEW!</span>
+      </div>
+    </section>
+
+    <!-- OPTION 2 -->
+    <section class="option">
+      <h2>Option 2: Text-only, red letters (Pulse)</h2>
+      <p class="desc">No box. Only the “NEW!” text pulses.</p>
+
+      <div class="file">
+        FY2026 Financial Report
+        <span class="badge-text">NEW!</span>
+      </div>
+      <div class="file">
+        Sustainability Committee Minutes
+        <span class="badge-text">NEW!</span>
+      </div>
+    </section>
+
+    <!-- OPTION 3 -->
+    <section class="option">
+      <h2>Option 3: Red background + white text (Pulse)</h2>
+      <p class="desc">Filled red pill with white text and soft pulse.</p>
+
+      <div class="file">
+        FY2026 Financial Report
+        <span class="badge-fill-pulse">NEW!</span>
+      </div>
+      <div class="file">
+        Sustainability Committee Minutes
+        <span class="badge-fill-pulse">NEW!</span>
+      </div>
+    </section>
+
+    <!-- OPTION 4 -->
+    <section class="option">
+      <h2>Option 4: Red background + white text (Static)</h2>
+      <p class="desc">Filled red pill, white text, no animation.</p>
+
+      <div class="file">
+        FY2026 Financial Report
+        <span class="badge-fill-static">NEW!</span>
+      </div>
+      <div class="file">
+        Sustainability Committee Minutes
+        <span class="badge-fill-static">NEW!</span>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
